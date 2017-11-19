@@ -1,0 +1,221 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+
+	button{
+
+
+	}
+	
+
+
+
+
+
+	#first{
+
+		background-color:white; 
+		padding-right: 177px;	
+
+
+
+
+	}
+
+
+
+	
+
+
+	h1{
+
+		color: green;
+		
+	}
+
+
+		body{background-image: url(https://images7.alphacoders.com/315/315686.jpg);
+
+
+
+
+            }
+
+		
+
+		td, table, th{
+
+			border: solid;
+			border-color: black;
+			background-color:green;
+			height: 100px;
+			width: 300px;
+			font-size: 40px;
+
+
+
+
+		}
+
+		td { 
+
+			background-color:rgb(255, 174, 0);
+			color: #046AB4;
+			text-align: center;
+			border-radius: 15px 50px:
+		
+
+
+
+		 }
+		th{
+
+			position: right;
+			background-color:rgb(255, 174, 0);
+			color: 046AB4 ;
+			text-align: right;
+			font-size: 40px;
+
+
+
+		}
+
+
+
+
+		
+
+
+	</style>
+</head>
+<body>
+	<h1>Shenron's calculator</h1>
+	<img src="https://78.media.tumblr.com/3191bcf33f75ad86167b7def8cc2539f/tumblr_ohb105IrGA1t45pbyo1_500.gif" width="300px">
+	<form name="skycalc">
+	<table>
+		
+
+	<th colspan="4">
+	
+	<input id="first" type="text" name="input" Size="16">
+
+	</th> 
+
+
+<tr>
+	
+	<td><input type="button" name="percent" value="%" onclick="percentIt()"></td>
+	<td><input type="button" name="clear" value="AC" onclick="skycalc.input.value = ''"></td>
+	<td><input type="button" name="add" value="+" onclick="skycalc.input.value += '+'"></td>
+	<td><input type="button" name="average" value="AVG" onclick="averageIt()"></td>
+
+
+</tr>
+
+<tr>
+	
+	<td><input type="button" name="seven" value="7" onclick="skycalc.input.value += '7'"></td>
+
+<td><input type="button" name="eight" value="8" onclick="skycalc.input.value += '8'"></td>
+
+<td><input type="button"  name="nine" value="9"   onclick="skycalc.input.value +='9'"></td>
+<td><input type="button" name="multiply" value="x" onclick="skycalc.input.value += '*'"></td>
+
+</tr>
+
+<tr>
+	
+	<td><input type="button"  name="four" value="4"   onclick="skycalc.input.value += '4'"></td>
+
+<td><input type="button" name="five" value="5" onclick="skycalc.input.value += '5'"></td>
+
+<td><input type="button" name="six" value="6" onclick="skycalc.input.value += '6'"></td>
+<td><input type="button" name="divide" value="/" onclick="skycalc.input.value += '/'"></td>
+
+
+</tr>
+
+	<td><input type="button" name="one" value="1" onclick="skycalc.input.value += '1'"></td>
+<td><input type="button" name="two" value="2" onclick="skycalc.input.value += '2'"></td>
+
+
+<td><input type="button" name="three" value="3" onclick="skycalc.input.value += '3'"></td>
+
+<td><input type="button" name="subtract" value="-" onclick="skycalc.input.value += '-'"></td>
+
+	</tr>
+
+<tr>
+
+<td><input type="button" name="zero" value="0" onclick= "skycalc.input.value += '0'"></td>
+<td><input type="button" name="decimal" value="." onclick="skycalc.input.value += '.'"></td>
+<td><input id="makeposneg" type="button" name="posneg" value="+/-" onclick="switchIt()"></td>
+
+<td><input type="button" name="compute" value="=" onclick="skycalc.input.value = eval(skycalc.input.value)"></td>
+
+</tr>
+
+
+	</table>
+
+<script type="text/javascript">
+var a, b, result;
+
+function setValue() {
+//Below is what the function is doing 
+//assign var a a value of element with Id 'first'
+a = Number(document.querySelector("#first").value);
+
+
+
+}
+
+function switchIt() {
+
+//here is a function call to setValue
+//go to setValue now
+
+setValue();
+// variable result is given a value here
+
+result = a * -1; // I multiply whatever number is in the input field by negative 1 to get a negative or positive number
+skycalc.input.value = (result);
+
+}
+
+function percentIt() {
+
+	//here is a function call to setValue
+	//go to set value now
+
+	setValue();
+
+	result = a * .01; // I multiply whatever number is in the input field by 0.1 to convert to percent
+	skycalc.input.value = (result);
+}
+
+function averageIt() {
+
+	//here is a function call to setValue
+	//go to set value now
+
+	setValue();
+
+	result = a/b;
+	b = skycalc.input.value.split(+).length;
+	skycalc.input.value =(result);
+
+
+
+}
+
+
+</script>
+</form>
+
+
+</body>
+</html>
